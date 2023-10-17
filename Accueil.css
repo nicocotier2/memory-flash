@@ -1,0 +1,48 @@
+html{
+    background: url(Assets/Fond\ Memory.png);
+    color: white;
+    font-size: 24px;
+}
+
+header{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+}
+div:nth-of-type(n){background-color: transparent}
+div{
+    height: auto;
+    display: flex;
+}
+span{display: block;
+    height:auto;
+    line-height: 3em;
+    text-align: center;
+    width: 100;
+}
+
+section{
+    display: flex;
+    min-height: 40vh;
+    justify-content: space-around;
+    height: 250px;
+}
+
+.d1{
+    width: 500px;
+}
+
+.bvn{
+    height: 100px;
+    justify-content: space-around;
+}
+
+.txt{
+    justify-content: space-around;
+}
+
+.tab{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+}

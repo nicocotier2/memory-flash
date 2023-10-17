@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,4 +59,37 @@
         </footer>
         <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
 </body>
+</html>
+<html>
+    <head>
+        <title>celestial_memory - contact</title>
+        <meta charset="UTF-8">
+        <link href="contact.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header"> 
+          </div> 
+        <div class="contact">
+            <form action="page_envoi_mail.php" method="post">
+                <ul>
+                    <li>
+                        <label for="Nom" > Nom</label>
+                        <input type="text" id="Nom" name="nom_user"/>
+                    </li>
+                    <li>
+                        <label for="mail" > Email</label>
+                        <input type="email" id="mail" name="mail_user"/>
+                    </li>
+                    <li>
+                        <label for="message" > Message</label>
+                        <textarea id="message" name="messageUser" ></textarea>
+                    </li>
+                </ul>
+                <div class="button">
+                    <button type="submit">Envoyer le message</button>
+                  </div>
+            </form>
+        </div>
+
+    </body>
 </html>
