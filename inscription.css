@@ -125,6 +125,7 @@ nav .listNav2 li:hover {
 .Copyright {
     color: white;
     display: flex;
+    background-color: #110921;
 }
 
 li:hover, ul:hover {
