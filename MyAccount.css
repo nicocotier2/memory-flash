@@ -5,7 +5,9 @@ html{
     height: 4432px;
     font-size: 36px;
     text-align: center;
+    color: white;
 }
+/* header */
 
 * {
     text-decoration: none;
@@ -18,6 +20,8 @@ html{
 body {
     background-color: #191d42;
 }
+
+
 
 nav {
     width: 100%;
@@ -34,7 +38,7 @@ header {
     flex-direction: column;
     background: url(images/wallpaper.png);
     width: 100%;
-    height: 350px;
+    height: 300px;
     color: white;
     align-items: center;
 }
@@ -67,18 +71,6 @@ section{
     height: 600px;
 }
 
-.diff{
-    width: 450px;
-}
-
-.space{
-    height: 200px;
-}
-
-input {
-    margin: 0.6rem;
-  }
-
 .field{
     width: 800px;
     height: 330px;
@@ -86,40 +78,10 @@ input {
     background-color: cornflowerblue;
 }
 
-.res{
-    border-radius: 1px;
-}
-
-table{
-    border-collapse: collapse;
-    border: 2px solid white;
-    height: 500px;
-}
-
-tr,th{
-    border-collapse: collapse;
-    border: 2px solid white;
-    height: 200px;
-    background-color: mediumblue;
-}
-
-td{
-    background-color: darkcyan;
-}
-
-.res{
-    width: 1764px;
-    height: 1000px;
-}
-
-.res2{
-    width: 1918px;
-    height: 2800px;
-}
+/* footer */
 
 footer {
     display: flex;
-    font-size: 24px;
 }
 
 .footer {
