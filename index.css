@@ -13,7 +13,7 @@ body {
 }
 
 .firstLandingPage {
-    background: url(images/wallpaper.png);
+    background: url(Assets/wallpaper.png);
     background-size: cover;
     background-position: center;
     height: 100vh;
