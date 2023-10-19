@@ -10,6 +10,7 @@
 
 body {
     background-color: #191d42;
+
 }
 
 a {
@@ -62,11 +63,21 @@ header {
     margin: 87px;
 }
 
+.paraf {
+    display: flex;
+    font-size: 15px;
+}
+
 .colorItem {
     height: 234px;
     width: 318px;
     background-color: #110921;
     color: white;
+}
+
+.barColor:hover {
+    box-sizing: border-box;
+    border-top: 3px solid #a8bbed;
 }
 
 .generalBox {
@@ -78,6 +89,7 @@ header {
     justify-content: center;
     height: 92px;
     align-items: flex-end;
+    flex-direction: column;
 }
 
 
@@ -108,15 +120,13 @@ input[type="text"], input[type="email"], input[type="password"] {
     border-radius: 3px;
 }
 input[type="submit"] {
-    display: flex;
-    align-items: center;
     background-color: #10112b;
     color: #fff;
     border: none;
     border-radius: 3px;
     padding: 10px 20px;
     cursor: pointer;
-    margin: auto;
+    margin: 20px;
 }
 input[type="submit"]:hover {
     background-color: #36398f;
