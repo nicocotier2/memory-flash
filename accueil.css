@@ -173,10 +173,14 @@ span  {
 }
 
 .color-block {
-    width: 179px;
-    height: 138px;
-    background-color: #a8bbed;
-    margin: 10px
+    display: flex;
+    width: 272px;
+    height: 115px;
+    margin-bottom: 11px;
+    background-color: rgb(168, 187, 237);
+    margin: 22px;
+    justify-content: center;
+    align-items: center;
 }
 
 .bigBlock{
@@ -241,15 +245,17 @@ p.p {
     align-items: center;
 }
 
-
-
-
+.align {
+    display: flex;
+    flex-direction: column;
+}
 
 /*footer */
 
 footer {
     display: flex;
     background-color: #110921;
+    margin-top: 71px;
 }
 
 .footer {
@@ -262,6 +268,12 @@ footer {
 
 .span {
     color: #a8bbed;
+}
+
+.footerList2 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
 }
 
 .footer2 {

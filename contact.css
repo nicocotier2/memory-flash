@@ -66,6 +66,7 @@ header {
 .paraf {
     display: flex;
     font-size: 15px;
+    margin: 15px;
 }
 
 .colorItem {
@@ -86,10 +87,11 @@ header {
 
 .icon {
     display: flex;
-    justify-content: center;
     height: 92px;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    margin-top: 67px;
 }
 
 
@@ -137,6 +139,8 @@ input[type="submit"]:hover {
 
 footer {
     display: flex;
+    background-color: #110921;
+    margin-top: 71px;
 }
 
 .footer {
@@ -169,6 +173,7 @@ nav .listNav2 li:hover {
 .Copyright {
     color: white;
     display: flex;
+    background-color: #110921;
 }
 
 li:hover, ul:hover {
