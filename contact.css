@@ -12,7 +12,9 @@ body {
     background-color: #191d42;
 }
 
-
+a {
+    color: white;
+}
 
 nav {
     width: 100%;
@@ -52,6 +54,32 @@ header {
 }
 
 /* main page */
+
+.boxItem {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 87px;
+}
+
+.colorItem {
+    height: 234px;
+    width: 318px;
+    background-color: #110921;
+    color: white;
+}
+
+.generalBox {
+    font-size: 35px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    height: 92px;
+    align-items: flex-end;
+}
+
 
 .form {
     display: flex;
@@ -95,7 +123,6 @@ input[type="submit"]:hover {
 }
 
 
-
 /* footer */
 
 footer {
@@ -132,9 +159,14 @@ nav .listNav2 li:hover {
 .Copyright {
     color: white;
     display: flex;
-    background-color: #110921;
 }
 
 li:hover, ul:hover {
     color: #b5aaf0;
 }
+
+.colorBehind {
+    background-color: #10112b;
+    width: 100%;
+}
+

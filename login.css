@@ -12,7 +12,9 @@ body {
     background-color: #191d42;
 }
 
-
+a {
+    color: white;
+}
 
 nav {
     width: 100%;

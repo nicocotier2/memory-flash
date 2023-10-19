@@ -12,11 +12,31 @@ body {
     background-color: #10112b;
 }
 
+a {
+    color: white;
+    padding-top: 1.2vw;
+}
+
 .firstLandingPage {
     background: url(images/wallpaper.png);
     background-size: cover;
     background-position: center;
     height: 100vh;
+    margin: 0%;
+}
+
+.barColor:hover {
+    box-sizing: border-box;
+    border-top: 3px solid #a8bbed;
+}
+
+.listNav2 li a {
+    text-decoration: none; 
+    color: white; 
+}
+
+.listNav2 li a:hover {
+    color: #a8bbed; 
 }
 
 nav {
@@ -117,9 +137,12 @@ input[type="submit"]:hover {
     
 }
 
+.number {
+    font-size: 35px;
+}
+
 span  {
     color: #36398f;
-    font-size: 35px;
 }
 
 .latinShit {

@@ -4,30 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="inscription.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+    <script src="https://kit.fontawesome.com/055bcde1a6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        
-        <section>
+    <header class="header">
+        <nav>
+            <div class="listNav1"><a href="accueil.html">Celestial Memory</a></div>
+            <ul class="listNav2">
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="jeu.html">Jeu</a></li>
+                <li><a href="scores.html">Scores</a></li>
+                <li><a href="contact.html">Nous contacter</a></li>
+                <li><a href="login.html">Connexion</a></li>
+                <li><a href="inscription.html">S'inscrire</a></li>
+            </ul>
+        </nav>
+        <div class="main-title"><h1>NOUS CONTACTER</h1></div>
+    </header>
+
+         <section>
+         <div class="generalBox">
+            <div class="boxItem">
+                <div class="colorItem"><div class="icon"><i class="fa-solid fa-phone"></i></div></div>
+                <div class="colorItem"><div class="icon"><i class="fa-solid fa-envelope"></i></div></div>
+                <div class="colorItem"><div class="icon"><i class="fa-solid fa-location-dot"></i></div></div>
+            </div>
+        </div>
+
             <form action="#" method="post">
                 <div class="form-group">
-                    <input type="email" id="email" name="email" required placeholder="email">
+                    <input type="email" id="email" name="email" required placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="text" id="pseudo" name="pseudo" required placeholder="pseudo">
+                    <input type="text" id="name" name="name" required placeholder="Nom">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="motdepasse" name="motdepasse" required placeholder="mot de passe">
+                    <input type="text" id="text" name="text" required placeholder="Sujet">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="confirmerMotdepasse" name="confirmerMotdepasse" required placeholder="confirmez votre mot de passe">
+                    <input type="text" id="text" name="text" required placeholder="Message">
                 </div>
-                <input type="submit" value="S'inscrire">
+                <input type="submit" value="Envoyer">
             </form>
         </section> 
 
-        <footer>
+
+         <footer>
+            
             <div class="footer">
             <h2>Information</h2><br>
             <p>Voici les informations nécessaires pour pouvoir obtenir des informations</p><br>
@@ -45,40 +70,8 @@
                 <li><span>Nous contacter</span></li>
             </ul>
             </div>
-        </footer>
-        <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
-</body>
-</html>
-<html>
-    <head>
-        <title>celestial_memory - contact</title>
-        <meta charset="UTF-8">
-        <link href="contact.css" rel="stylesheet">
-    </head>
-    <body>
-        <div id="header"> 
-          </div> 
-        <div class="contact">
-            <form action="page_envoi_mail.php" method="post">
-                <ul>
-                    <li>
-                        <label for="Nom" > Nom</label>
-                        <input type="text" id="Nom" name="nom_user"/>
-                    </li>
-                    <li>
-                        <label for="mail" > Email</label>
-                        <input type="email" id="mail" name="mail_user"/>
-                    </li>
-                    <li>
-                        <label for="message" > Message</label>
-                        <textarea id="message" name="messageUser" ></textarea>
-                    </li>
-                </ul>
-                <div class="button">
-                    <button type="submit">Envoyer le message</button>
-                  </div>
-            </form>
-        </div>
+            </footer>
+            <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
 
-    </body>
+</body>
 </html>
