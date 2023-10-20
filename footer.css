@@ -1,0 +1,49 @@
+footer {
+    display: flex;
+    background-color: #110921;
+    margin-top: 71px;
+}
+
+.footer {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    margin: 150px 60px;
+    flex-direction: column;
+}
+
+.span {
+    color: #a8bbed;
+}
+
+.footerList2 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.footer2 {
+    margin: 150px 60px;
+    display: flex;
+    color: white;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: auto;
+    align-items: flex-end;
+}
+
+
+nav .listNav2 li:hover {
+    color: #a8bbed;
+}
+
+.Copyright {
+    color: white;
+    display: flex;
+    background-color: #110921;
+    margin: 0;
+}
+
+li:hover, ul:hover {
+    color: #b5aaf0;
+}
