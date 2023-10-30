@@ -4,24 +4,24 @@
 <head>
   <title>Agora Francia - Accueil</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/acceuil.css">
-  <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+  <link rel="stylesheet" type="text/css" href="<?= PROJECT_FOLDER ?>css/acceuil.css">
+  <link rel="stylesheet" type="text/css" href="<?= PROJECT_FOLDER ?>css/header_footer.css">
   <script src="js/acceuil.js"></script>
 </head>
 
 <body>
   <div id="header">
-    <a href="acceuil.php"><img src="images/logo.jpg" style="width: 250px;"></a>
-    <a href="panier.php"><img src="images/panier_achats.jpg"
+    <a href="<?= PROJECT_FOLDER ?>acceuil.php"><img src="images/logo.jpg" style="width: 250px;"></a>
+    <a href="<?= PROJECT_FOLDER ?>panier.php"><img src="images/panier_achats.jpg"
         style="position: relative; left: 100%; transform: translate(-420%); width: 80px;"></a>
   </div>
 
   <div id="navbar">
-    <a href="acceuil.php">Accueil</a>
-    <a href="toutparcourir.php">Tout Parcourir</a>
-    <a href="notif.php">Notifications</a>
-    <a href="panier.php">Panier</a>
-    <a href="profil.php">Votre Compte</a>
+    <a href="<?= PROJECT_FOLDER ?>acceuil.php">Accueil</a>
+    <a href="<?= PROJECT_FOLDER ?>toutparcourir.php">Tout Parcourir</a>
+    <a href="<?= PROJECT_FOLDER ?>notif.php">Notifications</a>
+    <a href="<?= PROJECT_FOLDER ?>panier.php">Panier</a>
+    <a href="<?= PROJECT_FOLDER ?>profil.php">Votre Compte</a>
     <div id="search-bar">
       <input type="text" placeholder="Rechercher..." />
       <button type="submit">Rechercher</button>
@@ -158,7 +158,7 @@
   <div id="footer">
     <div class="footer-column">
       <h5>Qui sommes-nous ?</h5>
-      <a href="maps.php" style="text-decoration: none; color: white;">
+      <a href="<?= PROJECT_FOLDER ?>maps.php" style="text-decoration: none; color: white;">
         <h5>Nos magasins</h5>
       </a>
       <h5>Recrutement</h5>

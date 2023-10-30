@@ -7,9 +7,9 @@
 
         <div class="secondLandingPage">
             <div class="gamePics">
-                <div class="first-image"><img src="Assets/jeu.jpeg" alt="jeu"></div>
-                <div><img src="Assets/bj.jpeg" alt="bj"></div>
-                <div><img src="Assets/carte.jpeg" alt="carte"></div>
+                <div class="first-image"><img src="<?= PROJECT_FOLDER ?>Assets/jeu.jpeg" alt="jeu"></div>
+                <div><img src="<?= PROJECT_FOLDER ?>Assets/bj.jpeg" alt="bj"></div>
+                <div><img src="<?= PROJECT_FOLDER ?>Assets/carte.jpeg" alt="carte"></div>
             </div>
         <div class="align">
             <div class="textUnder">
@@ -26,7 +26,7 @@
         </div> 
         <div class="secondPartOfSecond">
             <div class="otherPics">
-                <img src="Assets/section.jpg" alt="watch dogs">
+                <img src="<?= PROJECT_FOLDER ?>Assets/section.jpg" alt="watch dogs">
                 <div class="bigBlock">
                     <div class="">
                         <div class="color-block"><p class="p"><span class="number">310</span> parties jouées</p></div>
@@ -46,12 +46,12 @@
                 <div><p>Voici la constitution de l'équipe</p></div>
             </div>
             <div class="illust">
-                <div><img src="Assets/illust.png" alt="illustration"></div>
+                <div><img src="<?= PROJECT_FOLDER ?>Assets/illust.png" alt="illustration"></div>
             </div>
             <div class="profile">
-                <div class="color2"><img src="Assets/profile.png" alt="profile" class="prof"></div>
-                <div class="color2"><img src="Assets/profile.png" alt="profile" class="prof"></div>
-                <div class="color2"><img src="Assets/profile.png" alt="profile" class="prof"></div>
+                <div class="color2"><img src="<?= PROJECT_FOLDER ?>Assets/profile.png" alt="profile" class="prof"></div>
+                <div class="color2"><img src="<?= PROJECT_FOLDER ?>Assets/profile.png" alt="profile" class="prof"></div>
+                <div class="color2"><img src="<?= PROJECT_FOLDER ?>Assets/profile.png" alt="profile" class="prof"></div>
             </div>
         </div>
         

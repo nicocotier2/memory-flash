@@ -1,15 +1,10 @@
+<?php require 'utils/common.php'; ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
-    <script src="https://kit.fontawesome.com/055bcde1a6.js" crossorigin="anonymous"></script>
-</head>
+<?php require SITE_ROOT.'partials/head.php'; ?>
+
 <body>
     <?php include ("partials/header.php"); ?>
 
@@ -45,26 +40,8 @@
         </section> 
 
 
-         <footer>
-            
-            <div class="footer">
-            <h2>Information</h2><br>
-            <p>Voici les informations nécessaires pour pouvoir obtenir des informations</p><br>
-            <ul class="footerList1">
-                <li><span>Tel:</span> 01 18 28 90 47</li><br>
-                <li><span>Email:</span> support@celestialmemory.com</li><br>
-                <li><span>Location:</span> Paris</li>
-            </ul>
-            </div>
-            <div class="footer2">
-            <h2>Celestial Memory</h2><br>
-            <ul class="footerList2">
-                <li><span>Jouer !</span></li><br>
-                <li><span>Les scores</span></li><br>
-                <li><span>Nous contacter</span></li>
-            </ul>
-            </div>
-            </footer>
+        <?php require SITE_ROOT.'partials/footer.php'; ?>
+
             <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
 
 </body>
