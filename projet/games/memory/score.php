@@ -13,13 +13,13 @@
         <nav>
             <div class="listNav1"><a href="index.html">Celestial Memory</a></div>
             <ul class="listNav2">
-                <li><a href="index.html" class="barColor">Accueil</a></li>
-                <li><a href="jeux.html" class="barColor">Jeu</a></li>
-                <li><a href="score.html" class="barColor">Scores</a></li>
-                <li><a href="contact.html" class="barColor">Nous contacter</a></li>
-                <li><a href="login.html" class="barColor">Connexion</a></li>
-                <li><a href="register.html" class="barColor">S'inscrire</a></li>
-                <li><a href="MyAccount.html" class="barColor">myAccount</a></li>
+                <li><a href="index.php" class="barColor">Accueil</a></li>
+                <li><a href="jeux.php" class="barColor">Jeu</a></li>
+                <li><a href="score.php" class="barColor">Scores</a></li>
+                <li><a href="contact.php" class="barColor">Nous contacter</a></li>
+                <li><a href="login.php" class="barColor">Connexion</a></li>
+                <li><a href="register.php" class="barColor">S'inscrire</a></li>
+                <li><a href="MyAccount.php" class="barColor">myAccount</a></li>
             </ul>
         </nav>
         <div class="main-title"><h1>SCORES</h1></div>
@@ -28,39 +28,39 @@
     <section class="secc">
             <fieldset class="field">
                 <legend>Choisis la difficulté souhaitée</legend>            
-                <div>
-                  <br><input type="radio" id="easy" name="difficulté" value="easy" />
-                  <label for="easy">Easy</label>
-                </div>
-                <div>
-                  <input type="radio" id="medium" name="difficulté" value="medium" />
-                  <label for="medium">Medium</label>
-                </div>
-                <div>
-                  <input type="radio" id="hard" name="difficulté" value="hard" />
-                  <label for="hard">Hard</label>
-                </div>
+                    <br><div class="op">
+                        <input type="radio" id="easy" name="difficulté" value="easy" />
+                        <label for="easy">Easy</label>
+                    </div>
+                    <br><div class="op">
+                        <input type="radio" id="medium" name="difficulté" value="medium" />
+                        <label for="medium">Medium</label>
+                    </div>
+                    <br><div class="op">
+                        <input type="radio" id="hard" name="difficulté" value="hard" />
+                        <label for="hard">Hard</label>
+                    </div>
             </fieldset>
             <fieldset class="field">
                 <legend>Pseudo du joueur:</legend>            
                 <div>
-                    <br><label for="pseudo">De qui souhaitez vous voir les scores ?</label><br>
+                    <br><br><label for="pseudo">De qui souhaitez vous voir les scores ?</label><br>
                     <input type="text" id="pseudo" name="pseudo"><input type="button" value="RECHERCHER">
                 </div>
             </fieldset>
     </section>
-    <section class="res2">
+    <div>
         <table class="res">
-            <thead><tr><th>RESULTAT</th><th>Nom du joueur</th></tr></thead>
-            <tbody>
-                <tr><th>Jeu</th><td>(insérer nom du jeu)</td></tr>
-                <tr><th>Difficulté</th><td>(insérer difficulté)</td></tr>
-                <tr><th>Nom</th><td>(insérer nom du joueur)</td></tr>
-                <tr><th>Pseudo</th><td>(insérer pseudo)</td></tr>
-                <tr><th>High score</th><td>(insérer le score)</td></tr>      
+            <thead class><tr class="sc"><th class="sc">RESULTAT</th><th class="sc">Nom du joueur</th></tr></thead>
+            <tbody class>
+                <tr class="sc"><th class="sc">Jeu</th><td>(insérer nom du jeu)</td></tr>
+                <tr class="sc"><th class="sc">Difficulté</th><td>(insérer difficulté)</td></tr>
+                <tr class="sc"><th class="sc">Nom</th><td>(insérer nom du joueur)</td></tr>
+                <tr class="sc"><th class="sc">Pseudo</th><td>(insérer pseudo)</td></tr>
+                <tr class="sc"><th class="sc">High score</th><td>(insérer le score)</td></tr>      
             </tbody>
         </table>
-    </section>
+    </div>
     <footer>
         <div class="footer">
         <h2>Information</h2><br>

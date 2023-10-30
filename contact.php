@@ -11,24 +11,10 @@
     <script src="https://kit.fontawesome.com/055bcde1a6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="header">
-        <nav>
-            <div class="listNav1"><a href="index.html">Celestial Memory</a></div>
-                <ul class="listNav2">
-                    <li><a href="index.html" class="barColor">Accueil</a></li>
-                    <li><a href="jeux.html" class="barColor">Jeu</a></li>
-                    <li><a href="score.html" class="barColor">Scores</a></li>
-                    <li><a href="contact.html" class="barColor">Nous contacter</a></li>
-                    <li><a href="login.html" class="barColor">Connexion</a></li>
-                    <li><a href="register.html" class="barColor">S'inscrire</a></li>
-                    <li><a href="MyAccount.html" class="barColor">myAccount</a></li>
-                </ul>
-        </nav>
-        <div class="main-title2"><h1>NOUS CONTACTER</h1></div>
-    </header>
+    <?php include ("partials/header.php"); ?>
 
-         <section>
-         <div class="generalBox">
+    <section>
+        <div class="generalBox">
             <div class="boxItem">
                 <div class="colorItem">
                     <div class="icon">

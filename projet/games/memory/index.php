@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="stylesheet" href="../../../header.css">
+    <link rel="stylesheet" href="../../../footer.css">
 </head>
 <body>
         <div class="firstLandingPage">
             <nav>
                 <div class="listNav1"><a href="index.html">Celestial Memory</a></div>
                 <ul class="listNav2">
-                    <li><a href="index.html" class="barColor">Accueil</a></li>
-                    <li><a href="jeux.html" class="barColor">Jeu</a></li>
-                    <li><a href="score.html" class="barColor">Scores</a></li>
-                    <li><a href="contact.html" class="barColor">Nous contacter</a></li>
-                    <li><a href="login.html" class="barColor">Connexion</a></li>
-                    <li><a href="register.html" class="barColor">S'inscrire</a></li>
-                    <li><a href="MyAccount.html" class="barColor">myAccount</a></li>
+                <li><a href="index.php" class="barColor">Accueil</a></li>
+                <li><a href="jeux.php" class="barColor">Jeu</a></li>
+                <li><a href="score.php" class="barColor">Scores</a></li>
+                <li><a href="contact.php" class="barColor">Nous contacter</a></li>
+                <li><a href="login.php" class="barColor">Connexion</a></li>
+                <li><a href="register.php" class="barColor">S'inscrire</a></li>
+                <li><a href="MyAccount.php" class="barColor">myAccount</a></li>
                 </ul>
             </nav>
             <div class="bothTitle">
             <div class="main-title"><h1>BIENVENUE DANS <br>NOTRE STUDIO !</h1></div>
             <div class="underMain">
                 <p>Venez challengez les cerveaux les plus agiles !</p>
-            </div>
-            <input type="submit" value="JOUER !">
+            </div><br>
+            <input type="submit" value="JOUER !" href="jeux.html">
             </div>
         </div> 
 
