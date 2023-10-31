@@ -39,6 +39,13 @@ a {
     color: #a8bbed; 
 }
 
+.onPageHighlight {
+    color: #a8bbed;
+    text-decoration: underline;
+    text-decoration: solid;
+    font-size: 40px;
+}
+
 nav {
     width: 100%;
     color: white;
