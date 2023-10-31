@@ -21,10 +21,7 @@
     color: white;
 }
 
-.barColor:hover {
-    box-sizing: border-box;
-    border-top: 3px solid #a8bbed;
-}
+
 
 .generalBox {
     font-size: 35px;
@@ -74,9 +71,6 @@ input[type="submit"] {
     cursor: pointer;
     margin: 20px;
 }
-input[type="submit"]:hover {
-    background-color: #36398f;
-}
 
 input[type="submit"] {
     display: flex;
@@ -89,10 +83,6 @@ input[type="submit"] {
     cursor: pointer;
     margin: auto;
     margin-top: 50px;
-}
-
-input[type="submit"]:hover {
-    background-color: #36398f;
 }
 
 .paraf {
@@ -364,9 +354,6 @@ input[type="submit"] {
     padding: 10px 20px;
     cursor: pointer;
     margin: auto;
-}
-input[type="submit"]:hover {
-    background-color: #36398f;
 }
 
 /* section */
