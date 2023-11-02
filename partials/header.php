@@ -1,25 +1,3 @@
-<!-- <div class="firstLandingPage">
-    <nav>
-        <div class="listNav1"><a href="<?= PROJECT_FOLDER ?>index.php">Celestial Memory</a></div>
-        <ul class="listNav2">
-        <li><a href="<?= PROJECT_FOLDER ?>index.php" class="barColor">Accueil</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>../../../jeux.php" class="barColor">Jeu</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>score.php" class="barColor">Scores</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>../../../contact.php" class="barColor">Nous contacter</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>../../../login.php" class="barColor">Connexion</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>../../../register.php" class="barColor">S'inscrire</a></li>
-        <li><a href="<?= PROJECT_FOLDER ?>../../../MyAccount.php" class="barColor">myAccount</a></li>
-        </ul>
-    </nav>
-    <div class="bothTitle">
-    <div class="main-title"><h1>BIENVENUE DANS <br>NOTRE STUDIO !</h1></div>
-    <div class="underMain">
-        <p>Venez challengez les cerveaux les plus agiles !</p>
-    </div><br>
-    <input type="submit" value="JOUER !" href="<?= PROJECT_FOLDER ?>jeux.php">
-    </div>
-</div>  -->
-
 <!-- fonction pour vérifier la page où on se trouve-->
 <?php
 function getPage(): string {
@@ -28,7 +6,6 @@ function getPage(): string {
 }
 getPage()
 ?>
-<!-- fonction pour afficher le bouton de la nav en fonction de la page sur laquelle tu es-->
 
 <header class="header">
 <?php $test = getPage(); ?>
@@ -99,4 +76,13 @@ getPage()
         <div class="main-title2"><h1>Votre compte</h1></div>
     <?php endif;?>
     
+    <?php
+    $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
+    $pdoStatement2->execute([
+        ':id_user' => 1,
+    ]);
+    $user = $pdoStatement2->fetch();
+    ?>
+    <p> <?php echo $user->pseudo; ?></p>
+
 </header>

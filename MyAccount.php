@@ -14,11 +14,11 @@
             <br>         
             <div>
                 <label for="Old mail">Rentre ton ancien mail</label>
-                <input type="input" name="Old mail" value="Ancien mail" />
+                <input type="input" name="Old mail" required placeholder ="Ancien mail" />
             </div>
             <div>
                 <label for="New mail">Rentre ton nouveau mail</label>
-                <input type="input" name="New mail" value="Nouveau mail" />
+                <input type="input" name="New mail" required placeholder ="Nouveau mail" />
             </div>
             <div>
                 <label for="pass">Entre ton mot de passe</label>

@@ -2,6 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require SITE_ROOT.'partials/head.php'; ?>
+<?php require 'utils/database.php'; ?>
+<?php
+$pdo = connectToDbAndGetPdo();
+$pdoStatement = $pdo->prepare('SELECT COUNT(*) AS UserNb FROM user');
+$pdoStatement->execute();
+$row = $pdoStatement->fetch();
+?>
+
+<?php
+$sql = "SELECT game.game_name, user.pseudo, score.difficulty, score.score
+FROM score Join game ON score.id_game = game.id_game JOIN user ON score.id_user = user.id_user";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <body>
     <?php require SITE_ROOT.'partials/header.php'; ?>
 
@@ -34,7 +50,7 @@
                     </div>
                     <div class="">
                         <div class="color-block"><p class="p"><span class="number">10 sec</span> temps records</p></div>
-                        <div class="color-block"><p class="p"><span class="number">21 300</span> joueurs inscrits</p></div>
+                        <div class="color-block"><p class="p"><span class="number"><?= $row->UserNb ?></span> joueurs inscrits</p></div>
                     </div>
                 </div>
                 

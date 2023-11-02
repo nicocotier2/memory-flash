@@ -1,4 +1,6 @@
 <?php require '../../utils/common.php'; ?>
+<?php require SITE_ROOT.'utils/database.php'; ?>
+<?php $pdo = connectToDbAndGetPdo();?>
 <!DOCTYPE html>
 <html lang="en">
     <?php require SITE_ROOT.'partials/head.php'; ?>
@@ -210,10 +212,24 @@
         </div>
         <div class="main_chat">
             <!--afficher les messages reçu, en bleu ceux envoyé et en gris ceux reçu-->
-            <p class="message_util">salutation l'ami</p>
-            <p class="message_autre">yo</p>
+            <?php 
+                    $pdoStatement = $pdo->prepare('SELECT * FROM message ORDER BY date_send ASC LIMIT 10');
+                    $pdoStatement->execute();
+                    $messages = $pdoStatement->fetchAll();
+                    foreach ($messages as $score): ?>
+                        <?php if ($score->id_user == 1):?>
+                        
+                            <p class="message_util"><?php echo $score->text_send; ?></p> ;
+                        
+                        <?php else: ?>
+                        
+                            <p class="message_autre"><?php echo  $score->text_send; ?></p> ;
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                        
+                     
         </div>
-        <div class="footer_chat">
+        <div class="footer_chat"> 
             <!--afficher le formulaire et le bouton d'envoie-->
             <!-- footer chat -->
             <form action="envoie_message.php"></form>

@@ -1,5 +1,6 @@
 <?php require '../../utils/common.php'; ?>
-
+<?php require '../../utils/database.php'; ?>
+<?php $pdo = connectToDbAndGetPdo();?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require SITE_ROOT.'partials/head.php'; ?>
@@ -34,13 +35,22 @@
     </section>
     <div>
         <table class="res">
-            <thead class><tr class="sc"><th class="sc">RESULTAT</th><th class="sc">Nom du joueur</th></tr></thead>
+            <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">Nom du joueur</th></tr></thead>
+            <?php require SITE_ROOT.'utils/database.php'?>
             <tbody class>
-                <tr class="sc"><th class="sc">Jeu</th><td>(insérer nom du jeu)</td></tr>
-                <tr class="sc"><th class="sc">Difficulté</th><td>(insérer difficulté)</td></tr>
-                <tr class="sc"><th class="sc">Nom</th><td>(insérer nom du joueur)</td></tr>
-                <tr class="sc"><th class="sc">Pseudo</th><td>(insérer pseudo)</td></tr>
-                <tr class="sc"><th class="sc">High score</th><td>(insérer le score)</td></tr>      
+                <?php $pdo = connectToDbAndGetPdo();
+                    $pdoStatement = $pdo->prepare('SELECT * from Score s INNER JOIN game g ON s.id_game = g.id_game INNER JOIN user u ON s.id_user = u.id_user');
+                    $pdoStatement->execute();
+                    $scores = $pdoStatement->fetchAll();?>
+                    <?php foreach ($scores as $score): ?>
+                        <tr class="sc">
+                            <td><?php echo $score->score; ?></td>
+                            <td><?php echo $score->difficulty; ?></td>
+                            <td><?php echo $score->game_name; ?></td>
+                            <td><?php echo $score->pseudo; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+
             </tbody>
         </table>
     </div>

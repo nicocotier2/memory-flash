@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `pseudo` (`pseudo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
-ALTER TABLE `mgessae`
+ALTER TABLE `message`
   ADD CONSTRAINT ` e_id_game_fk` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`),
   ADD CONSTRAINT `message_id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
