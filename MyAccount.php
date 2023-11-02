@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require SITE_ROOT.'partials/head.php'; ?>
+<?php require SITE_ROOT.'utils/database.php'; 
+?>
+<?php $pdo = connectToDbAndGetPdo();?>
 
 <body>
 <?php require SITE_ROOT.'partials/header.php'; ?>
-
     <br><br><br><br><br><br><br><br>
     <section class="sec">
         <fieldset class="field3">

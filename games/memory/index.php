@@ -198,7 +198,6 @@
 
             </form>
         </div>-->
-    <input type="checkbox" class="show-container" id="show-container">
     </div>
     <input type="checkbox" class="show-container" id="show-container">
     <div class="tchat2"><!-- ici c'est notre container -->

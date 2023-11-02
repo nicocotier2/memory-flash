@@ -9,7 +9,6 @@ getPage()
 
 <header class="header">
 <?php $test = getPage(); ?>
-
     <nav>
         <div class="listNav1"><a href="<?= PROJECT_FOLDER ?>index.php">Celestial Memory</a></div>
             <ul class="listNav2">

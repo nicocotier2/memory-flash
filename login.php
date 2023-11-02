@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require SITE_ROOT.'partials/head.php'; ?>
-<?php require SITE_ROOT . 'utils/database.php'; ?>
+<?php require 'utils/database.php'; ?>
+<?php $pdo = connectToDbAndGetPdo();?>
 
 <body>
     <?php include ("partials/header.php"); ?>

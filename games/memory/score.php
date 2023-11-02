@@ -36,7 +36,7 @@
     <div>
         <table class="res">
             <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">Nom du joueur</th></tr></thead>
-            <?php require SITE_ROOT.'utils/database.php'?>
+           
             <tbody class>
                 <?php $pdo = connectToDbAndGetPdo();
                     $pdoStatement = $pdo->prepare('SELECT * from Score s INNER JOIN game g ON s.id_game = g.id_game INNER JOIN user u ON s.id_user = u.id_user');
