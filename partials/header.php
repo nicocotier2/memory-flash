@@ -37,9 +37,9 @@ getPage()
                 <li><a href="<?= PROJECT_FOLDER ?>contact.php" class="barColor">Nous contacter</a></li>
             <?php endif; ?>
             <?php
-            if (($section = "/memory-flash/login.php")== $test ):?>
+            if (($section = "/memory-flash/login.php")== $test && empty($_SESSION["user"])):?>
                 <li><a href="<?= PROJECT_FOLDER ?>login.php" class="onPageHighlight">Connexion </a></li>
-            <?php else: ?>
+            <?php elseif(empty($_SESSION["user"])): ?>
                 <li><a href="<?= PROJECT_FOLDER ?>login.php" class="barColor">Connexion </a></li>
             <?php endif; ?>    
             <?php
@@ -49,9 +49,9 @@ getPage()
                 <li><a href="<?= PROJECT_FOLDER ?>register.php" class="barColor">S'inscrire</a></li>
             <?php endif; ?>  
             <?php
-            if (($section = "/memory-flash/MyAccount.php")== $test ):?>
+            if (($section = "/memory-flash/MyAccount.php")== $test && !empty($_SESSION["user"]) ):?>
                 <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="onPageHighlight">myAccount</a></li>
-            <?php else: ?>
+            <?php elseif(!empty($_SESSION["user"])): ?>
                 <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="barColor">myAccount</a></li>
             <?php endif; ?>
             </ul>
@@ -76,9 +76,10 @@ getPage()
     <?php endif;?>
     
     <?php
+    $pdo=connectToDbAndGetPdo();
     $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
     $pdoStatement2->execute([
-        ':id_user' => 1,
+        ':id_user' => $_SESSION['user']['id'],
     ]);
     $user = $pdoStatement2->fetch();
     ?>

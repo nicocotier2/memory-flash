@@ -181,23 +181,6 @@
         </table>
         </div>
         </center>
-    
-        <!--<div class="tchat">
-            <p>hello world</p>
-            <p>hello world</p>
-            <p>hello worlds</p>
-            <form action="tchat.php" method="post">
-             <ul>
-                    <li>
-                        <textarea id="msg" name="user_message"></textarea>
-                    </li>
-                    <li>
-                        <button type="submit">Envoyer le message</button>
-                    </li>
-                </ul>
-
-            </form>
-        </div>-->
     </div>
     <input type="checkbox" class="show-container" id="show-container">
     <div class="tchat2"><!-- ici c'est notre container -->
@@ -212,17 +195,19 @@
         <div class="main_chat">
             <!--afficher les messages reçu, en bleu ceux envoyé et en gris ceux reçu-->
             <?php 
-                    $pdoStatement = $pdo->prepare('SELECT * FROM message ORDER BY date_send ASC LIMIT 10');
+                    $pdoStatement = $pdo->prepare('SELECT * FROM message WHERE date_send >= NOW() - INTERVAL 1 DAY ORDER BY date_send ASC LIMIT 10');
                     $pdoStatement->execute();
                     $messages = $pdoStatement->fetchAll();
                     foreach ($messages as $score): ?>
                         <?php if ($score->id_user == 1):?>
                         
-                            <p class="message_util"><?php echo $score->text_send; ?></p> ;
+                            <p class="message_util"><?php echo $score->text_send; ?></p>
+                            <br> 
                         
                         <?php else: ?>
                         
-                            <p class="message_autre"><?php echo  $score->text_send; ?></p> ;
+                            <p class="message_autre"><?php echo  $score->text_send; ?></p> 
+                            <br>
                         <?php endif; ?>
                     <?php endforeach; ?>
                         

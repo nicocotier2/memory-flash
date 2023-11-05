@@ -34,7 +34,7 @@ $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div><h2><span>03 </span>Lorem Ipsum</h2></div>
             </div>
             <div class="latinShit">
-                <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age.</p></div>
+                <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age..</p></div>
                 <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age.</p></div>
                 <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age.</p></div>
             </div>
