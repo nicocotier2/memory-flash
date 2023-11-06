@@ -3,13 +3,54 @@
 <?php $pdo = connectToDbAndGetPdo();?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php require SITE_ROOT.'partials/head.php'; ?>
+<style>
+    .playForm{
+        width: 25%;
+        height: 40px;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .start{
+        font-size: 20px;
+        width: 25%;
+        height: 40px;
+    }
+</style>
+<script>
+
+</script>
+<?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
         <?php require SITE_ROOT.'partials/header.php'; ?>
 
         <center>
         
+        <div class="flex">
+            <select class="playForm" name = "theme" id = "theme">
+                <option disabled selected value="Choix">Choisis un thème !</option>
+                <option value="theme 1">Thème 1</option>
+                <option value="theme 2">Thème 2</option>
+                <option value="theme 3">Thème 3</option>
+            </select>
+            <select class="playForm" name = "diff" id = "diff">
+                <option disabled selected value="diff">Choisis une difficulté !</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+        <div><button class="start" type="submit">Lancer la partie</button></div>
+
         <p>timer : </p>
 
         <div class="plato_easy">
