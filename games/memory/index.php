@@ -25,14 +25,15 @@
         height: 40px;
     }
 </style>
-<script>
-
-</script>
 <?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
         <?php require SITE_ROOT.'partials/header.php'; ?>
-
+<center>
+<button id="startButton">Start</button>
+<button id="resetButton">Reset</button>
+<h1 id="chono">00:00:00</h1>
+  
         <center>
         
         <div class="flex">
@@ -51,7 +52,50 @@
         </div>
         <div><button class="start" type="submit">Lancer la partie</button></div>
 
-        <p>timer : </p>
+<script>
+var h1 = document.getElementById('chono');
+var start = document.getElementById('startButton');
+var reset = document.getElementById('resetButton');
+var sec = 0;
+var min = 0;
+var hrs = 0;
+var t;
+
+function tick() {
+  sec++;
+  if (sec >= 60) {
+    sec = 0;
+    min++;
+    if (min >= 60) {
+      min = 0;
+      hrs++;
+    }
+  }
+}
+
+function add() {
+  tick();
+  h1.textContent = (hrs > 9 ? hrs : '0' + hrs) + ':' +
+    (min > 9 ? min : '0' + min) + ':' + (sec > 9 ? sec : '0' + sec);
+  timer();
+}
+
+function timer() {
+  t = setTimeout(add, 1000);
+}
+
+start.onclick = function() {
+  timer();
+}
+
+reset.onclick = function() {
+  clearTimeout(t);
+  h1.textContent = '00:00:00';
+  sec = 0;
+  min = 0;
+  hrs = 0;
+}
+</script>
 
         <div class="plato_easy">
             <table>
@@ -221,7 +265,7 @@
             </tr>
         </table>
         </div>
-        </center>
+</center>
     </div>
     <input type="checkbox" class="show-container" id="show-container">
     <div class="tchat2"><!-- ici c'est notre container -->
