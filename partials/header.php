@@ -84,5 +84,6 @@ getPage()
     $user = $pdoStatement2->fetch();
     ?>
     <p> <?php echo $user->pseudo; ?></p>
+    
 
 </header>
