@@ -5,8 +5,11 @@
 <?php require SITE_ROOT . 'partials/head.php'; ?>
 <?php require 'utils/database.php'; ?>
 <?php $pdo = connectToDbAndGetPdo();?>
+<head>
 
+</head>
 <body>
+
     <?php require SITE_ROOT . 'partials/header.php'; ?>
     <?php
 
@@ -64,6 +67,7 @@
     }
     ?>
     <section>
+
         <form action="#" method="post">
             <div class="form-group">
                 <input type="email" id="email" name="email" required placeholder="email">
@@ -72,8 +76,20 @@
                 <input type="text" id="pseudo" name="pseudo" required placeholder="pseudo">
             </div>
             <div class="form-group">
-                <input type="password" id="motdepasse" name="motdepasse" required placeholder="mot de passe">
+                <input type="password" id="motdepasse" oninput="validateMDP()" name="motdepasse" required placeholder="mot de passe">
             </div>
+            <div id="strength-bar" style="
+                    display: flex;
+                    height: 15px;
+                    background-color: grey;
+                    color: white;
+                    width: 250px;
+                    margin-left: 360px;
+                    margin-top: -25px;
+                    ">
+                </div>
+                <p id="password-strength"></p>
+                
             <div class="form-group">
                 <input type="password" id="confirmerMotdepasse" name="confirmerMotdepasse" required placeholder="confirmez votre mot de passe">
             </div>
@@ -84,7 +100,28 @@
             echo '<div class="message">' . $message . '</div>';
         }
     ?>
-    </section>
+    <script>
+    function validateMDP() {
+        var mdp = document.getElementById("motdepasse").value;
+        var bar = document.getElementById("strength-bar");
+        var moyenReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        var eleveReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{12,}$/;
+        
+        if (eleveReg.test(mdp)) {
+            bar.style.backgroundColor = "green"; 
+            bar.innerHTML = "Strong password"
+        } else if (moyenReg.test(mdp)) {
+            bar.style.backgroundColor = "orange"; 
+            bar.innerHTML = "Medium password"
+        } else if (mdp.length > 0) {
+            bar.style.backgroundColor = "red";
+            bar.innerHTML = "Weak password"
+        } else {
+            bar.style.backgroundColor = "grey";
+            bar.innerHTML = "";
+        }
+    }
+    </script>
 
     <?php require SITE_ROOT . 'partials/footer.php'; ?>
 

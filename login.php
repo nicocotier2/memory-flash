@@ -26,8 +26,9 @@
             'id' => $user['id_user'], 
             'email' => $user['mail']
             ];
+            header("Location: MyAccount.php");
             return $message = "Connexion réussie ! Vous êtes connecté.";
-            }
+        }
         else {
             return $message = "Mail ou mot de passe incorrect.";
         }
