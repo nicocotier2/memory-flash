@@ -74,16 +74,7 @@ getPage()
     <?php else:?>
         <div class="main-title2"><h1>Votre compte</h1></div>
     <?php endif;?>
-    
-    <?php
-    $pdo=connectToDbAndGetPdo();
-    $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
-    $pdoStatement2->execute([
-        ':id_user' => $_SESSION['user']['id'],
-    ]);
-    $user = $pdoStatement2->fetch();
-    ?>
-    <p> <?php echo $user->pseudo; ?></p>
+
     
 
 </header>

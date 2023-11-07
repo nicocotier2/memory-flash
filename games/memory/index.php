@@ -3,7 +3,7 @@
 <?php $pdo = connectToDbAndGetPdo();?>
 <!DOCTYPE html>
 <html lang="en">
-    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
@@ -11,10 +11,10 @@
 <center>
 <button id="startButton">Start</button>
 <button id="resetButton">Reset</button>
-<h1 id="chono">00:00:00</h1>
+<h1 id="chrono">00:00:00</h1>
 
 <script>
-var h1 = document.getElementById('chono');
+var h1 = document.getElementById('chrono');
 var start = document.getElementById('startButton');
 var reset = document.getElementById('resetButton');
 var sec = 0;
@@ -59,10 +59,31 @@ reset.onclick = function() {
 </script>
 
 
+<script>
+    function ajaxEnvoie(){
+        var score = "00:01:20";
+        var difficulty = 3;
+        $.ajax({
+            type: "POST",
+            url: "insertScoreAjax.php",
+            data: { 'score': score, 'level': level },
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+
+    ajaxEnvoie();
+</script>
 
 
+<?php
 
-    </script>
+ 
+?>
 
         <div class="plato_easy">
             <table>
