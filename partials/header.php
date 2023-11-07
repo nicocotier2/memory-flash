@@ -54,6 +54,12 @@ getPage()
             <?php elseif(!empty($_SESSION["user"])): ?>
                 <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="barColor">myAccount</a></li>
             <?php endif; ?>
+            <?php 
+            if (($section = "/memory-flash/logout.php")== $test && !empty($_SESSION["user"]) ):?>
+                <li><a href="<?= PROJECT_FOLDER ?>logout.php" class="onPageHighlight">logout</a></li>
+            <?php elseif(!empty($_SESSION["user"])): ?>
+                <li><a href="<?= PROJECT_FOLDER ?>logout.php" class="barColor">logout</a></li>
+            <?php endif; ?>
             </ul>
     </nav>
     
@@ -71,19 +77,21 @@ getPage()
         <div class="main-title2"><h1>Connectez vous</h1></div>
     <?php elseif ($test == "/memory-flash/register.php"):?>
         <div class="main-title2"><h1>Créez votre compte</h1></div>
-    <?php else:?>
+    <?php elseif ($test == "/memory-flash/myAccount.php"):?>
         <div class="main-title2"><h1>Votre compte</h1></div>
-    <?php endif;?>
+    <?php else:?>
+        <div class="main-title2"><h1>Déconnexion</h1></div>
+     <?php endif;?>
     
-    <?php
-    $pdo=connectToDbAndGetPdo();
-    $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
-    $pdoStatement2->execute([
-        ':id_user' => $_SESSION['user']['id'],
-    ]);
-    $user = $pdoStatement2->fetch();
+    <?php 
+        $pdo=connectToDbAndGetPdo();
+        if (isset($_SESSION['user']['id'])) {
+            $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
+            $pdoStatement2->execute([':id_user' => $_SESSION['user']['id'],]);
+            $user = $pdoStatement2->fetch();
+        } else {
+            $user = null;
+    }
     ?>
-    <p> <?php echo $user->pseudo; ?></p>
-    
-
+    <p> <?php if($user !== null) {echo $user->pseudo;} ?></p>
 </header>
