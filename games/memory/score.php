@@ -35,32 +35,39 @@
             </fieldset>
     </section>
     <div>
-        <table class="res">
+    Copy code
+            <table id="scoresTable" class="res">
+            <input type="button" value="Actualiser" onclick="effacerScores()">
             <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">difficulté</th><th class="sc">nom du jeu</th><th class="sc">Pseudo</th></tr></thead>
            
             <tbody class>
             <?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["id_score"])) {
-            $score = $_POST["id_score"];
-            $level = 1; 
-
-            $pdoStatement = $pdo->prepare('INSERT INTO Score (score, difficulty, id_game, id_user) VALUES (:score, :difficulty, :game_id, :user_id)');
-    $pdoStatement->execute([
-        ':score' => $score,
-        ':difficulty' => $level,
-        ':game_id' => 1, 
-        ':user_id' => 1, 
-    ]);
-    }
-}
-?>
+                $pdo = connectToDbAndGetPdo();
+                $pdoStatement = $pdo->prepare('SELECT * from score s 
+                INNER JOIN game g ON s.id_game = g.id_game 
+                INNER JOIN user u ON s.id_user = u.id_user');
+                $pdoStatement->execute();
+                $scores = $pdoStatement->fetchAll();?>
+                <?php foreach ($scores as $score): ?>
+                    <tr class="sc">
+                        <td><?php echo $score->score; ?></td>
+                        <td><?php echo $score->difficulty; ?></td>
+                        <td><?php echo $score->game_name; ?></td>
+                        <td><?php echo $score->pseudo; ?></td>
+                    </tr>
+                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
     <?php require SITE_ROOT.'partials/footer.php'; ?>
 
     <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
+    <script>
+    function effacerScores() {
+        var tableauScores = document.getElementById("scoresTable");
+        var tbody = tableauScores.querySelector("tbody");
+        tbody.innerHTML = ""; // Effacer le contenu du corps du tableau
+    }
+</script>
 </body>
 </html>

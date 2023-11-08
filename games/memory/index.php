@@ -271,15 +271,19 @@ reset.onclick = function() {
         }
 
         function sendScore(score) {
-            var level = 1; 
+            var level = 1;
             $.ajax({
                 type: "POST",
-                url: "", 
-                data: { 'score': score, 'level': level },
-                success: function(response) {
+                url: "insertScoreAjax.php",
+                data: { 'score': score, 'difficulty': level }, // Utilisez la variable level au lieu du nombre fixe
+                success: function (response) {
                     console.log(response);
+                    if (pairsFound === cards.length / 2) {
+                        stopTimer();
+                        alert("Partie terminée ! Votre score a été enregistré." +score);
+                    }
                 },
-                error: function(error) {
+                error: function (error) {
                     console.log(error);
                 }
             });
@@ -329,4 +333,3 @@ reset.onclick = function() {
     </body>
  </html>
 
- <!--overflow-y: scroll-->

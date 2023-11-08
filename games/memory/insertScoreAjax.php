@@ -1,27 +1,27 @@
-<?php require '../../utils/common.php'; ?>
-
-<?php require SITE_ROOT.'utils/database.php'; ?>
-
-
-
 <?php
+require '../../utils/common.php';
+require SITE_ROOT.'utils/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["id_score"])) {
-            $score = $_POST["id_score"];
-            $level = 1; 
+    if (isset($_POST["score"])) {
+        $score = $_POST["score"];
+        $level = 1;
+        $gameId = 1; // Assurez-vous de mettre la valeur correcte ici
+        $userId = 14; // Assurez-vous de mettre la valeur correcte ici
 
-            $pdoStatement = $pdo->prepare('INSERT INTO Score (score, difficulty, id_game, id_user) VALUES (:score, :difficulty, :game_id, :user_id)');
-    $pdoStatement->execute([
-        ':score' => $score,
-        ':difficulty' => $level,
-        ':game_id' => 1, 
-        ':user_id' => 1, 
-    ]);
+        $pdo = connectToDbAndGetPdo();
+        $pdoStatement = $pdo->prepare('INSERT INTO score (score, difficulty, id_game, id_user) VALUES (:score, :difficulty, :game_id, :user_id)');
+        $pdoStatement->execute([
+            ':score' => $score,
+            ':difficulty' => $level,
+            ':game_id' => $gameId,
+            ':user_id' => $userId,
+        ]);
+
+        echo "Score inséré avec succès.";
+    } else {
+        echo "Score non fourni.";
     }
+} else {
+    echo "Requête incorrecte.";
 }
-?>
-    
-
-
-session_start();
