@@ -10,7 +10,8 @@
     <?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
-        <?php require SITE_ROOT.'partials/header.php'; ?>
+      <?php require SITE_ROOT.'partials/header.php'; ?>
+<center>
 <button id="startButton">Start</button>
 <button id="resetButton">Reset</button>
 <h1 id="chrono">00:00:00</h1>
@@ -34,6 +35,7 @@ function tick() {
       hrs++;
     }
   }
+  elapsedTime++;
 }
 
 function add() {
@@ -47,8 +49,13 @@ function timer() {
   t = setTimeout(add, 1000);
 }
 
+var isTimerRunning
+
 start.onclick = function() {
-  timer();
+    if (!isTimerRunning) {
+        isTimerRunning = true;
+        timer();
+    }
 }
 
 reset.onclick = function() {
@@ -57,86 +64,71 @@ reset.onclick = function() {
   sec = 0;
   min = 0;
   hrs = 0;
+  isTimerRunning = false;
 }
 </script>
 
+</center>
 
-<script>
-    function ajaxEnvoie(){
-        var score = 50;
-        var level = 3;
-        $.ajax({
-            type: "POST",
-            url: "localhost",
-            data: { 'score': score, 'level': level },
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        });
-    }
 
-    ajaxEnvoie();
-</script>
+
 <section class="memory-game">
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="lac">
+        <img class="front-face" src= "../../Assets/lac.jpg" alt="lac">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="lac">
+        <img class="front-face" src= "../../Assets/lac.jpg" alt="lac">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="pink">
+        <img class="front-face" src= "../../Assets/pink.jpg" alt="pink">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="pink">
+        <img class="front-face" src= "../../Assets/pink.jpg" alt="pink">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="green">
+        <img class="front-face" src= "../../Assets/green.jpg" alt="green">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="green">
+        <img class="front-face" src= "../../Assets/green.jpg" alt="green">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="oror">
+        <img class="front-face" src= "../../Assets/oror.jpg" alt="oror">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="oror">
+        <img class="front-face" src= "../../Assets/oror.jpg" alt="oror">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="purple">
+        <img class="front-face" src= "../../Assets/purple.jpg" alt="purple">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="purple">
+        <img class="front-face" src= "../../Assets/purple.jpg" alt="purple">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="champs">
+        <img class="front-face" src= "../../Assets/champs.jpg" alt="champs">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
-    <div class="memory-card">
-        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+    <div class="memory-card" data-framework="champs">
+        <img class="front-face" src= "../../Assets/champs.jpg" alt="champs">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
     </div>
 
@@ -184,19 +176,9 @@ reset.onclick = function() {
         }
     </style>
 
-    <script>
-    const cards = document.querySelectorAll('.memory-card');
-
-    function flipCard() {
-    this.classList.toggle('flip');
-    }
-
-    cards.forEach(card => card.addEventListener('click', flipCard));
-    </script>
 
 </section>
 
-    </div>
     <input type="checkbox" class="show-container" id="show-container">
     <div class="tchat2"><!-- ici c'est notre container -->
         <!-- dessiner carré blanc -->
@@ -242,6 +224,108 @@ reset.onclick = function() {
     <?php require SITE_ROOT.'partials/footer.php'; ?>
 
     <div class="Copyright"><p>Copyright © 2023 Tout droits réservés</p></div>
+    <script>
+    const cards = document.querySelectorAll('.memory-card');
+    var pairsFound = 0;
+    var elapsedTime = 0;
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard, secondCard;
+
+    function flipCard() {
+        if (lockBoard || this.classList.contains('flip')) return;
+
+        this.classList.add('flip');
+
+        if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+        startTimer();
+        return;
+        }
+
+        secondCard = this;
+
+        checkForMatch();
+        }
+
+        function startTimer() {
+        if (!isTimerRunning) {
+            timer();
+            isTimerRunning = true;
+        }
+        }
+
+        function checkForMatch() {
+            let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+            if (isMatch) {
+                disableCards();
+                pairsFound++;
+                if (pairsFound === cards.length / 2) {
+                    stopTimer();
+                    sendScore(elapsedTime);
+                }
+            } else {
+                unflipCards();
+            }
+        }
+
+        function sendScore(score) {
+            var level = 1; 
+            $.ajax({
+                type: "POST",
+                url: "", 
+                data: { 'score': score, 'level': level },
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function stopTimer() {
+            if (isTimerRunning) {
+                clearTimeout(t);
+                isTimerRunning = false;
+                sec = 0;
+                min = 0;
+                hrs = 0;
+                h1.textContent = '00:00:00';
+            }
+        }
+
+
+        function disableCards() {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
+        resetBoard();
+        }
+
+        function unflipCards() {
+            lockBoard = true;
+
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+            resetBoard();
+        }, 1500);
+        }
+        function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+        }
+
+        (function shuffle() {
+        cards.forEach(card => {
+            let ramdomPos = Math.floor(Math.random() * 12);
+            card.style.order = ramdomPos;
+        });
+        })();
+
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    </script>
     </body>
  </html>
 
