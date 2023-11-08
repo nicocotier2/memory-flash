@@ -39,20 +39,22 @@
             <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">difficulté</th><th class="sc">nom du jeu</th><th class="sc">Pseudo</th></tr></thead>
            
             <tbody class>
-                <?php $pdo = connectToDbAndGetPdo();
-                    $pdoStatement = $pdo->prepare('SELECT * from Score s 
-                    INNER JOIN game g ON s.id_game = g.id_game 
-                    INNER JOIN user u ON s.id_user = u.id_user');
-                    $pdoStatement->execute();
-                    $scores = $pdoStatement->fetchAll();?>
-                    <?php foreach ($scores as $score): ?>
-                        <tr class="sc">
-                            <td><?php echo $score->score; ?></td>
-                            <td><?php echo $score->difficulty; ?></td>
-                            <td><?php echo $score->game_name; ?></td>
-                            <td><?php echo $score->pseudo; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
+            <?php
+                $pdo = connectToDbAndGetPdo();
+                    $pdoStatement = $pdo->prepare('SELECT * FROM Score s 
+                        INNER JOIN game g ON s.id_game = g.id_game 
+                        INNER JOIN user u ON s.id_user = u.id_user');
+                $pdoStatement->execute();
+                $scores = $pdoStatement->fetchAll();
+            ?>
+            <?php foreach ($scores as $score): ?>
+                <tr class="sc">
+                    <td><?php echo $score->score; ?></td>
+                    <td><?php echo $score->difficulty; ?></td>
+                    <td><?php echo $score->game_name; ?></td>
+                    <td><?php echo $score->pseudo; ?></td>
+                </tr>
+            <?php endforeach; ?>
 
             </tbody>
         </table>

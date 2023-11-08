@@ -3,12 +3,14 @@
 <?php $pdo = connectToDbAndGetPdo();?>
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    <link rel="stylesheet" href="main.css">
+</head>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
         <?php require SITE_ROOT.'partials/header.php'; ?>
-<center>
 <button id="startButton">Start</button>
 <button id="resetButton">Reset</button>
 <h1 id="chrono">00:00:00</h1>
@@ -61,11 +63,11 @@ reset.onclick = function() {
 
 <script>
     function ajaxEnvoie(){
-        var score = "00:01:20";
-        var difficulty = 3;
+        var score = 50;
+        var level = 3;
         $.ajax({
             type: "POST",
-            url: "insertScoreAjax.php",
+            url: "localhost",
             data: { 'score': score, 'level': level },
             success: function(response) {
                 console.log(response);
@@ -78,182 +80,122 @@ reset.onclick = function() {
 
     ajaxEnvoie();
 </script>
+<section class="memory-game">
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
 
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
 
-<?php
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
 
- 
-?>
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
 
-        <div class="plato_easy">
-            <table>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>  
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <br>
-        <div class="plato_easy">
-            <table>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>  
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-                <tr>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                    <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <br>
-        <div class="plato_easy">
-        <table>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>    
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-            <tr>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td>
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-                <td><img src="<?= PROJECT_FOLDER ?>Assets/image.png"></td> 
-            </tr>
-        </table>
-        </div>
-</center>
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+    <div class="memory-card">
+        <img class="front-face" src= "../../Assets/P2.jpeg" alt="React">
+        <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
+    </div>
+
+    <style>
+        .memory-card {
+            width: calc(25% - 10px);
+            height: calc(33.333% - 10px);
+            margin: 5px;
+            position: relative;
+            box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+            transform: scale(1);
+            transform-style: preserve-3d;
+            transition: transform .5s;
+        }
+
+        .memory-game {
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+
+        .front-face, .back-face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        background: #1C7CCC;
+        backface-visibility: hidden;
+        }
+
+        .memory-card:active {
+            transform: scale(0.97);
+            transition: transform .2s;
+        }
+
+        .memory-card.flip {
+            transform: rotateY(180deg);
+        }
+
+        .front-face {
+        transform: rotateY(180deg);
+        }
+    </style>
+
+    <script>
+    const cards = document.querySelectorAll('.memory-card');
+
+    function flipCard() {
+    this.classList.toggle('flip');
+    }
+
+    cards.forEach(card => card.addEventListener('click', flipCard));
+    </script>
+
+</section>
+
     </div>
     <input type="checkbox" class="show-container" id="show-container">
     <div class="tchat2"><!-- ici c'est notre container -->
@@ -295,6 +237,7 @@ reset.onclick = function() {
         </div>
 
     </div>
+
 
     <?php require SITE_ROOT.'partials/footer.php'; ?>
 
