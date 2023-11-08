@@ -35,8 +35,7 @@
             </fieldset>
     </section>
     <div>
-    Copy code
-            <table id="scoresTable" class="res">
+    <table id="scoresTable" class="res">
             <input type="button" value="Actualiser" onclick="effacerScores()">
             <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">difficulté</th><th class="sc">nom du jeu</th><th class="sc">Pseudo</th></tr></thead>
            

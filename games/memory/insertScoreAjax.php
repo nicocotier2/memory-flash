@@ -6,8 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["score"])) {
         $score = $_POST["score"];
         $level = 1;
-        $gameId = 1; // Assurez-vous de mettre la valeur correcte ici
-        $userId = 14; // Assurez-vous de mettre la valeur correcte ici
+        $gameId = 1; 
+        $userId = 14; 
 
         $pdo = connectToDbAndGetPdo();
         $pdoStatement = $pdo->prepare('INSERT INTO score (score, difficulty, id_game, id_user) VALUES (:score, :difficulty, :game_id, :user_id)');

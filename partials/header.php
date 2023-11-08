@@ -60,7 +60,7 @@ getPage()
     <?php if ($test == "/memory-flash/index.php"):?>
         <div class="main-title2"><h1>BIENVENUE DANS<br>NOTRE STUDIO !</h1></div>
         <div class= "underMain "><p>venez challengez les cerveaux les plus agiles</p></div><br><br>
-        <input type="submit" value="JOUER !" href="<?= PROJECT_FOLDER ?>jeux.php"><br><br>
+        <input type="submit" value="JOUER !" href="<?= PROJECT_FOLDER ?>index.php"><br><br>
     <?php elseif ($test == "/memory-flash/games/memory/index.php"):?>
         <div class="main-title2"><h1>À vous de jouer !</h1></div>
     <?php elseif ($test == "/memory-flash/games/memory/score.php"):?>
