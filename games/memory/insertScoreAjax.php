@@ -10,6 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userId = 14; 
 
         $pdo = connectToDbAndGetPdo();
+
+        $pdoStatement = $pdo->prepare('DELETE FROM score WHERE id_user = :user_id AND score > :score');
+        $pdoStatement->execute([
+            ':user_id' => $userId,
+            ':score' => $score,
+        ]);
+
         $pdoStatement = $pdo->prepare('INSERT INTO score (score, difficulty, id_game, id_user) VALUES (:score, :difficulty, :game_id, :user_id)');
         $pdoStatement->execute([
             ':score' => $score,
@@ -25,3 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Requête incorrecte.";
 }
+
+function getUserId() {
+
+}
+?>

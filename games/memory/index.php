@@ -279,7 +279,7 @@ reset.onclick = function() {
                 success: function (response) {
                     console.log(response);
                     if (pairsFound === cards.length / 2) {
-                        stopTimer();
+                        stopTimer();é
                         alert("Partie terminée ! Votre score a été enregistré." +score);
                     }
                 },
