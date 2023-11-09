@@ -29,14 +29,14 @@ $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <div class="align">
             <div class="textUnder">
-                <div><h2><span>01 </span>Lorem Ipsum</h2></div>
-                <div><h2><span>02 </span>Lorem Ipsum</h2></div>
-                <div><h2><span>03 </span>Lorem Ipsum</h2></div>
+                <div style="margin-right: 18%"><h2><span>01 </span>Never gonna</h2></div>
+                <div style="margin-right:18%"><h2><span>02 </span>give you</h2></div>
+                <div><h2><span>03 </span>up ! ( ͡° ͜ʖ ͡°)</h2></div>
             </div>
             <div class="latinShit">
-                <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age..</p></div>
-                <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age.</p></div>
-                <div><p>In on announcing if of comparison pianoforte projection. Maids hoped gay yet bed asked blind dried point. On abroad danger likely regret twenty edward do. Too horrible consider followed may differed age.</p></div>
+                <div style="margin-left: 3%; width: 60%"><p>Ceci est un texte filler. Je pourrais mettre absolument n'importe quoi, une histoire barbante du memory, un vieux rick roll, une blague pas drôle (on dira que ça dépend de l'audience kekw) mais j'ai un peu la flemme (OK j'ai menti).</p></div>
+                <div style="margin-left: 6%; width: 55%"><p>À la place, j'aimerais en profiter pour remercier mes camarades qui se sont impliqués dans ce projet avec moi pendant ces 4 semaines. Je suis extrêmement fier de nous et des progrès que nous avons faits ensemble, merci et bravo les gars !</p></div>
+                <div style="margin-left: 4.5%; width: 70%"><p>Je n'oublie évidemment pas l'aide de tous les autres membres de cette excellente classe qui nous ont aidé à maintes reprises, que ce soit pour git ou pour le code, ainsi que les PO qui ont fait de leur mieux pour nous épauler dans notre apprentissage (Joachim >>>>>).</p></div>
             </div>
         </div>
         </div> 

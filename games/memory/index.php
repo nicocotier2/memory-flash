@@ -32,7 +32,8 @@
     <?php require SITE_ROOT.'partials/head.php'; ?>
     <body>
     <div class="fond">
-      <?php require SITE_ROOT.'partials/header.php'; ?>
+    <?php require SITE_ROOT.'partials/header.php'; ?>
+    <?php $gameRows = 4; $gameColumns = 3; ?>
 <center>
 
 <div class="flex">
@@ -49,7 +50,7 @@
         <option value="Hard">Hard</option>
     </select>
 </div>
-<div><button class="start" type="submit">Lancer la partie</button></div>
+<div><button class="start" type="button">Lancer la partie</button></div>
 
 
 <button id="startButton">Start</button>
@@ -112,7 +113,7 @@ reset.onclick = function() {
 
 
 
-<section class="memory-game">
+<section class="memory-game" id="memoryGame">
     <div class="memory-card" data-framework="lac">
         <img class="front-face" src= "../../Assets/lac.jpg" alt="lac">
         <img class="back-face" src="../../Assets/image.png" alt="Memory Card">
@@ -247,6 +248,7 @@ reset.onclick = function() {
                             <br>
                         <?php endif; ?>
                     <?php endforeach; ?>
+                    <div id="new_message"></div>
                         
                      
         </div>
@@ -254,8 +256,8 @@ reset.onclick = function() {
             <!--afficher le formulaire et le bouton d'envoie-->
             <!-- footer chat -->
             <form action="envoie_message.php"></form>
-            <textarea class="messagerie" name="zone_text"></textarea>
-            <button type="button" class="bouton_envoie">send</button>
+            <textarea class="messagerie" id=myTextarea name="zone_text"></textarea>
+            <button type="button" class="bouton_envoie" onclick ='ajaxEnvoie()'>send</button>
         </div>
 
     </div>
@@ -372,3 +374,21 @@ reset.onclick = function() {
     </script>
     </body>
  </html>
+ <script>
+        function ajaxEnvoie(){
+        var texts = document.getElementById("myTextarea").value;
+        let request =
+      $.ajax({
+        type: "POST",      //Méthode à employer POST ou GET 
+        url: "envoie.php",  //Cible du script coté serveur à appeler 
+        data: {'textarea': texts}
+
+      });
+      console.log("yo");
+      request.done(function (output) {
+        //Code à jouer en cas d'éxécution sans erreur du script du PHP
+        const bla = document.getElementById("new_message");
+        bla.innerHTML = '<p class="message_util">'+ texts +'</p>';
+      });
+    }
+</script>
