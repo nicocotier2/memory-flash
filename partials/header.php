@@ -9,8 +9,15 @@ getPage()
 
 <header class="header">
 <?php $test = getPage(); ?>
+<?php 
+    $pdo=connectToDbAndGetPdo();
+    if (isset($_SESSION['user']['id'])) {
+        $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
+        $pdoStatement2->execute([':id_user' => $_SESSION['user']['id'],]);
+        $user = $pdoStatement2->fetch();
+        } else {$user = null;}?>
     <nav>
-        <div class="listNav1"><a href="<?= PROJECT_FOLDER ?>index.php">Celestial Memory</a></div>
+        <div class="listNav1"><a  style="font-size:20px; width: 10%; " href="<?= PROJECT_FOLDER ?>index.php">Celestial Memory</a></div>
             <ul class="listNav2">
             <?php
                 if (($section = "/memory-flash/index.php")== $test ):?>
@@ -50,9 +57,9 @@ getPage()
             <?php endif; ?>  
             <?php
             if (($section = "/memory-flash/MyAccount.php")== $test && !empty($_SESSION["user"]) ):?>
-                <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="onPageHighlight">myAccount</a></li>
+                <li><a style="display: flex; text-align: center;" href="<?= PROJECT_FOLDER ?>MyAccount.php" class="onPageHighlight">Mon compte<br><?php if($user !== null) {echo $user->pseudo;} ?></a></li>
             <?php elseif(!empty($_SESSION["user"])): ?>
-                <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="barColor">myAccount</a></li>
+                <li><a href="<?= PROJECT_FOLDER ?>MyAccount.php" class="barColor">Mon compte</a></li>
             <?php endif; ?>
             <?php 
             if (($section = "/memory-flash/logout.php")== $test && !empty($_SESSION["user"]) ):?>
@@ -64,8 +71,8 @@ getPage()
     </nav>
     
     <?php if ($test == "/memory-flash/index.php"):?>
-        <div class="main-title2"><h1>BIENVENUE DANS<br>NOTRE STUDIO !</h1></div>
-        <div class= "underMain "><p>venez challengez les cerveaux les plus agiles</p></div><br><br>
+        <div class="main-title2"><h1 style="width: 100%" >BIENVENUE DANS<br>NOTRE STUDIO !</h1></div>
+        <div class= "underMain "><p>Venez challenger les cerveaux les plus agiles</p></div><br><br>
         <input type="submit" value="JOUER !" href="<?= PROJECT_FOLDER ?>jeux.php"><br><br>
     <?php elseif ($test == "/memory-flash/games/memory/index.php"):?>
         <div class="main-title2"><h1>À vous de jouer !</h1></div>
@@ -77,21 +84,11 @@ getPage()
         <div class="main-title2"><h1>Connectez vous</h1></div>
     <?php elseif ($test == "/memory-flash/register.php"):?>
         <div class="main-title2"><h1>Créez votre compte</h1></div>
-    <?php elseif ($test == "/memory-flash/myAccount.php"):?>
+    <?php elseif ($test == "/memory-flash/MyAccount.php"):?>
         <div class="main-title2"><h1>Votre compte</h1></div>
     <?php else:?>
-        <div class="main-title2"><h1>Déconnexion</h1></div>
+        <div class="main-title2"><h1>Déconnection</h1></div>
      <?php endif;?>
     
-    <?php 
-        $pdo=connectToDbAndGetPdo();
-        if (isset($_SESSION['user']['id'])) {
-            $pdoStatement2 = $pdo->prepare('SELECT * from user WHERE user.id_user = :id_user');
-            $pdoStatement2->execute([':id_user' => $_SESSION['user']['id'],]);
-            $user = $pdoStatement2->fetch();
-        } else {
-            $user = null;
-    }
-    ?>
-    <p> <?php if($user !== null) {echo $user->pseudo;} ?></p>
+    <p style="font-size: 30px; margin-bottom: 5%; " > <?php if($user !== null) {echo $user->pseudo;} ?></p>
 </header>

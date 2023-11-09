@@ -496,12 +496,18 @@ body {
 
 .img_chat{
     height: 50px;
-    width: 50px;
+    width: 15%;
     position: relative;
     left: 10px;
     border-radius: 50%;
-
+    margin-right: 15%;
 }
+
+.chat_gif{
+    width: 20%;
+    margin-right: 20%;
+}
+
 .header_chat_nom{
     position: relative;
     left: 20px;
@@ -514,7 +520,7 @@ body {
     border:2px solid #679403; 
     position: relative;
     right: -10px;
-    bottom: -10px;
+    bottom: -1px;
     border-radius: 50%;
 }
 
