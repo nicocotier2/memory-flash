@@ -14,7 +14,6 @@ body {
 
 a {
     color: white;
-    padding-top: 1.2vw;
 }
 
 .firstLandingPage {
@@ -85,11 +84,11 @@ header {
     color: white;
     display: flex;
     font-size: 40px;
-    margin-top: 140px;
+    margin-top: 60px;
     justify-content: center;
-    padding: 90px;
+    padding: 80px;
     text-align: center;
-    width: 50%;
+    width: 80%;
 }
 
 .underMain {

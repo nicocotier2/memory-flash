@@ -16,8 +16,8 @@
         }
     ?>
 
-    <form method="post" action="">
-        <input type="submit" name="logout" value="Déconnexion">
+    <form style="margin-top:5%;" method="post" action="">
+        <input style="font-size: larger;" type="submit" name="logout" value="Déconnexion">
     </form>
     <?php require SITE_ROOT.'partials/footer.php'; ?>
 

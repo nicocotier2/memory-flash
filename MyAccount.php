@@ -47,6 +47,36 @@ function tryToUpdateProfile($newPassword) {
 
 <section>
         <br><br>
+        <?php $userId = $_SESSION['user']['id'];
+        $path = 'userFiles/' . $userId . '/';
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        if (isset($_FILES['profile_picture'])) {
+            $file = $_FILES['profile_picture'];
+            if ($file['error'] === UPLOAD_ERR_OK) {
+                $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
+                $newProfilePictureFilename = 'profile.' . $fileExtension;
+                $targetPath = $userfilesPath . $newProfilePictureFilename;
+            }
+        } else {
+            echo 'Erreur avec le fichier sélectionné';
+        }
+        ?>
+        <div style="height:5%; display: flex; justify-content: center; margin-bottom:5%; margin-top: 5%; margin-bottom:10%;">
+            <?php if (file_exists('userFiles/'.$userId.'/')):?>
+                <img style="width: 35%;" src="userFiles/10/profile-picture.jpg">
+            <?php else:?>-->
+                <img src="Assets/profile.png">
+            <?php endif; ?>
+            <div style="display: flex; flex-direction:column; align-items:center; margin-left: 5%; margin-top: 5%">
+                <h1 style="color: white;">Ma photo de profil</h1>
+                <form action="upload_profile_picture.php" method="post" enctype="multipart/form-data">
+                    <input style="margin-left:30%; margin-top: 25%; margin-bottom:5%;" type="file" name="profile_picture" accept="image">
+                    <input style="font-size: larger;" type="submit" value="Changer de photo de profil">
+                </form>
+            </div>
+        </div>
         <form action="#" method="post">
             <div class="form-group">
             <input type="password" name="OldPass" required placeholder="Entrez votre mot de passe actuel">
@@ -64,7 +94,7 @@ function tryToUpdateProfile($newPassword) {
             echo '<div class="message">' . $message . '</div>';
         }
         ?>
-    </section>
+</section>
 
 <?php require SITE_ROOT . 'partials/footer.php'; ?>
 

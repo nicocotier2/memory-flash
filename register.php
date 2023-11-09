@@ -84,8 +84,8 @@
                     background-color: grey;
                     color: white;
                     width: 250px;
-                    margin-left: 360px;
-                    margin-top: -25px;
+                    margin-left: 25%;
+                    margin-top: 1%;
                     ">
                 </div>
                 <p id="password-strength"></p>
