@@ -26,9 +26,9 @@ getPage()
                     <li><a href="<?= PROJECT_FOLDER ?>index.php" class="barColor">Accueil</a></li>
             <?php endif; ?>
             <?php
-            if (($section = "/memory-flash/games/memory/index.php")== $test ):?>
+            if (($section = "/memory-flash/games/memory/index.php")== $test && !empty($_SESSION["user"])):?>
                 <li><a href="<?= PROJECT_FOLDER ?>games/memory/" class="onPageHighlight">Jeu</a></li>
-            <?php else: ?>
+            <?php elseif(!empty($_SESSION["user"])): ?>
                 <li><a href="<?= PROJECT_FOLDER ?>games/memory/" class="barColor">Jeu</a></li>
             <?php endif; ?>
             <?php
@@ -73,7 +73,9 @@ getPage()
     <?php if ($test == "/memory-flash/index.php"):?>
         <div class="main-title2"><h1 style="width: 100%" >BIENVENUE DANS<br>NOTRE STUDIO !</h1></div>
         <div class= "underMain "><p>Venez challenger les cerveaux les plus agiles</p></div><br><br>
-        <input type="submit" value="JOUER !" href="<?= PROJECT_FOLDER ?>jeux.php"><br><br>
+        <a href="<?= PROJECT_FOLDER ?>games/memory/index.php" class="button-link">
+            <input type="button" value="JOUER !" class="button-style">
+        </a><br><br>
     <?php elseif ($test == "/memory-flash/games/memory/index.php"):?>
         <div class="main-title2"><h1>À vous de jouer !</h1></div>
     <?php elseif ($test == "/memory-flash/games/memory/score.php"):?>

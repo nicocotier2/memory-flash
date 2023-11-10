@@ -6,8 +6,15 @@
 <?php
 $pdo = connectToDbAndGetPdo();
 $pdoStatement = $pdo->prepare('SELECT COUNT(*) AS UserNb FROM user');
+$pdoHighScore = $pdo->prepare('SELECT score AS highScore FROM score ORDER BY score LIMIT 1');
+$pdoPartiesJouées = $pdo->prepare('SELECT games_played AS gp FROM game');
 $pdoStatement->execute();
+$pdoHighScore->execute();
+$pdoPartiesJouées->execute();
+
 $row = $pdoStatement->fetch();
+$hs = $pdoHighScore->fetch();
+$gp = $pdoPartiesJouées->fetch();
 ?>
 
 <?php
@@ -23,9 +30,9 @@ $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <div class="secondLandingPage">
             <div class="gamePics">
-                <div class="first-image"><img src="<?= PROJECT_FOLDER ?>Assets/jeu.jpeg" alt="jeu"></div>
-                <div><img src="<?= PROJECT_FOLDER ?>Assets/bj.jpeg" alt="bj"></div>
-                <div><img src="<?= PROJECT_FOLDER ?>Assets/carte.jpeg" alt="carte"></div>
+                <div class="first-image"><img src="<?= PROJECT_FOLDER ?>Assets/html:css_meme.jpeg" alt="jeu"></div>
+                <div><img src="<?= PROJECT_FOLDER ?>Assets/php_meme.jpeg" alt="bj"></div>
+                <div><img src="<?= PROJECT_FOLDER ?>Assets/js_meme.jpeg" alt="carte"></div>
             </div>
         <div class="align">
             <div class="textUnder">
@@ -34,7 +41,7 @@ $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div><h2><span>03 </span>up ! ( ͡° ͜ʖ ͡°)</h2></div>
             </div>
             <div class="latinShit">
-                <div style="margin-left: 3%; width: 60%"><p>Ceci est un texte filler. Je pourrais mettre absolument n'importe quoi, une histoire barbante du memory, un vieux rick roll, une blague pas drôle (on dira que ça dépend de l'audience kekw) mais j'ai un peu la flemme (OK j'ai menti).</p></div>
+                <div style="margin-left: 3%; width: 60%"><p>Ceci est un texte filler. Je pourrais mettre absolument n'importe quoi, une histoire barbante du memory, un vieux rick roll, une blague ou des memes pas drôles (on dira que ça dépend de l'audience kekw) mais j'ai un peu la flemme (OK j'ai menti).</p></div>
                 <div style="margin-left: 6%; width: 55%"><p>À la place, j'aimerais en profiter pour remercier mes camarades qui se sont impliqués dans ce projet avec moi pendant ces 4 semaines. Je suis extrêmement fier de nous et des progrès que nous avons faits ensemble, merci et bravo les gars !</p></div>
                 <div style="margin-left: 4.5%; width: 70%"><p>Je n'oublie évidemment pas l'aide de tous les autres membres de cette excellente classe qui nous ont aidé à maintes reprises, que ce soit pour git ou pour le code, ainsi que les PO qui ont fait de leur mieux pour nous épauler dans notre apprentissage (Joachim >>>>>).</p></div>
             </div>
@@ -43,13 +50,13 @@ $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="secondPartOfSecond">
             <div class="otherPics">
                 <img src="<?= PROJECT_FOLDER ?>Assets/section.jpg" alt="watch dogs">
-                <div class="bigBlock">
+                <div style="color: black" class="bigBlock">
                     <div class="">
-                        <div class="color-block"><p class="p"><span class="number">310</span> parties jouées</p></div>
-                        <div class="color-block"><p class="p"><span class="number">1020</span> joueurs connectés</p></div>
+                        <div class="color-block"><p class="p"><span class="number"><?= $gp->gp ?></span> parties jouées</p></div>
+                        <div class="color-block"><p class="p"><span class="number">IT'S OVER 9000 !!</span> joueurs connectés</p></div>
                     </div>
                     <div class="">
-                        <div class="color-block"><p class="p"><span class="number">10 sec</span> temps records</p></div>
+                        <div class="color-block"><p class="p"><span class="number"><?= $hs->highScore ?> sec</span> temps records</p></div>
                         <div class="color-block"><p class="p"><span class="number"><?= $row->UserNb ?></span> joueurs inscrits</p></div>
                     </div>
                 </div>

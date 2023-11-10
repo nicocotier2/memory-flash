@@ -8,7 +8,7 @@
 <?php require SITE_ROOT . 'partials/header.php'; ?>
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $message = tryToUpdateProfile($_POST["OldPass"], $_POST["NewPass"], $_POST["pass"]);
+    $message = tryToUpdateProfile($_POST["NewPass"]);
 }
 
 function tryToUpdateProfile($newPassword) {
@@ -59,8 +59,6 @@ function tryToUpdateProfile($newPassword) {
                 $newProfilePictureFilename = 'profile.' . $fileExtension;
                 $targetPath = $userfilesPath . $newProfilePictureFilename;
             }
-        } else {
-            echo 'Erreur avec le fichier sélectionné';
         }
         ?>
         <div style="height:5%; display: flex; justify-content: center; margin-bottom:5%; margin-top: 5%; margin-bottom:10%;">

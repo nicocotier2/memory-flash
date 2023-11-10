@@ -230,7 +230,7 @@ reset.onclick = function() {
             <p class="header_chat_nom">toto</p>
 
         </div>
-        <div class="main_chat">
+        <div style="background-image: url('../../Assets/ajax.jpeg'); background-size: cover; margin-left: 9%; margin-right: 9%;" class="main_chat">
             <!--afficher les messages reçu, en bleu ceux envoyé et en gris ceux reçu-->
             <?php 
                     $pdoStatement = $pdo->prepare('SELECT * FROM message WHERE date_send >= NOW() - INTERVAL 1 DAY ORDER BY date_send ASC LIMIT 10');
@@ -323,6 +323,7 @@ reset.onclick = function() {
                     if (pairsFound === cards.length / 2) {
                         stopTimer();
                         alert("Partie terminée ! Votre score a été enregistré." +score);
+                        updateGp();
                     }
                 },
                 error: function (error) {
@@ -375,7 +376,7 @@ reset.onclick = function() {
     </body>
  </html>
  <script>
-        function ajaxEnvoie(){
+    function ajaxEnvoie(){
         var texts = document.getElementById("myTextarea").value;
         let request =
       $.ajax({
@@ -390,5 +391,11 @@ reset.onclick = function() {
         const bla = document.getElementById("new_message");
         bla.innerHTML = '<p class="message_util">'+ texts +'</p>';
       });
+    }
+    function updateGp() {
+        let request = $.ajax({
+            type:"POST",
+            url:"updateGamesPlayed.php"
+        });
     }
 </script>
