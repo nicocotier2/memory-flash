@@ -69,6 +69,8 @@ header {
     align-items: center;
     height: 100%;
     background: url(../Assets/wallpaper.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .main-title {

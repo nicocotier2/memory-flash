@@ -36,7 +36,6 @@
     </section>
     <div>
     <table id="scoresTable" class="res">
-            <input type="button" value="Actualiser" onclick="effacerScores()">
             <thead class><tr class="sc"><th class="sc">SCORE</th><th class="sc">difficulté</th><th class="sc">nom du jeu</th><th class="sc">Pseudo</th></tr></thead>
            
             <tbody class>
@@ -67,6 +66,7 @@
         var tbody = tableauScores.querySelector("tbody");
         tbody.innerHTML = ""; // Effacer le contenu du corps du tableau
     }
+    
 </script>
 </body>
 </html>

@@ -64,11 +64,7 @@ function tryToUpdateProfile($newPassword) {
         }
         ?>
         <div style="height:5%; display: flex; justify-content: center; margin-bottom:5%; margin-top: 5%; margin-bottom:10%;">
-            <?php if (file_exists('userFiles/'.$userId.'/')):?>
-                <img style="width: 35%;" src="userFiles/10/profile-picture.jpg">
-            <?php else:?>-->
                 <img src="Assets/profile.png">
-            <?php endif; ?>
             <div style="display: flex; flex-direction:column; align-items:center; margin-left: 5%; margin-top: 5%">
                 <h1 style="color: white;">Ma photo de profil</h1>
                 <form action="upload_profile_picture.php" method="post" enctype="multipart/form-data">
