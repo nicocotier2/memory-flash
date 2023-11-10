@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr {
+            width: 400px;
+            height: 50px;
+        }
+
+        td {
+            border: solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="table" style="width: 800px; border-collapse: collapse;">
+        <tr>
+            <td style="width: 30%;">Name</td>
+            <td style="width: 30%;">Price</td>
+            <td style="width: 10%;"></td>
+        </tr>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="Name">
+            </td>
+            <td>
+                <input type="number" id="Price">
+            </td>
+            <td>
+                <input style="width: 50%; align-items: center; background-color: purple; color: white;" type="button" value="Add" onclick="addItem()">
+            </td>
+        </tr>
+    </table>
+    <p id="totalPrice">TOTAL : 0</p>
+
+    <script>
+        function addItem() {
+            var name = document.getElementById('Name').value;
+            var price = parseFloat(document.getElementById('Price').value);
+
+            if (name && !isNaN(price)) {
+                var table = document.getElementById('table');
+                var newrow = table.insertRow(table.rows.length - 1);
+                var cell1 = newrow.insertCell(0);
+                var cell2 = newrow.insertCell(1);
+                var cell3 = newrow.insertCell(2);
+
+                cell1.innerHTML = name;
+                cell2.innerHTML = price.toFixed(2);
+                cell3.innerHTML = '<input style="width: 90%; align-items: center; background-color: purple; color: white;" type="button" value="Remove" onclick="removeItem(this)">';
+
+                updateTotalPrice();
+            }
+        }
+
+        function removeItem(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            var table = document.getElementById('table');
+            var rows = table.rows;
+            var totalPrice = 0;
+
+            for (var i = 1; i < rows.length - 1; i++) {
+                totalPrice += parseFloat(rows[i].cells[1].innerHTML);
+            }
+
+            document.getElementById('totalPrice').innerHTML = 'Total Price: ' + totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+</script>

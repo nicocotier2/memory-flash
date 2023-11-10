@@ -84,8 +84,8 @@
                     display: flex;
                     color: white;
                     width: 25%;
-                    margin-left: 25%; 
-                    margin-top: -3%;
+                    margin-left: 25%;
+                    margin-top: -1%;
                     background-color: green;
                     font-size: 12px;
                     border-radius: 15px;
